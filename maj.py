@@ -135,7 +135,15 @@ def decode(r):
     return TILE_ID_INVERSE[r]
 
 class Mountain:
-    def __init__(self):
+    def __init__(self, skip_init=False):
+        
+        self.tile_matrix = None
+        self.meld_matrix = None
+        self.pair_matrix = None
+
+        if skip_init:
+            return
+
         ones = np.ones(34, dtype=np.uint8)
         tile_matrix = 4 * ones
 
@@ -150,6 +158,13 @@ class Mountain:
         pair_matrix = 6 * ones
 
         self.pair_matrix = pair_matrix
+
+    def copy(self):
+        cpy = Mountain(True)
+        cpy.tile_matrix = self.tile_matrix.copy()
+        cpy.meld_matrix = self.meld_matrix.copy()
+        cpy.pair_matrix = self.pair_matrix.copy()
+        return cpy
 
     def remove(self, c):
         if self.tile_matrix[c] == 0:
