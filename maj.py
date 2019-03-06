@@ -149,7 +149,9 @@ class Mountain:
 
         self.tile_matrix = tile_matrix
 
-        meld_matrix = np.vstack((2 * ones, 4 * ones))
+        meld_matrix = np.vstack((ones, ones))
+        meld_matrix[PONG] *= 4
+        meld_matrix[CHOW] *= 64
         for c in EXTERNAL_TILES:
             meld_matrix[CHOW, c] = 0
         
@@ -182,26 +184,57 @@ class Mountain:
         elif n == 1:
             self.pair_matrix[c] = 0
             self.on_pair_elimination(c)
-        elif n == 0:
-            pass
-        else:
-            import pdb; pdb.set_trace()
-            assert False
 
         if c-1 in INTERNAL_TILES:
-            m = min(self.tile_matrix[c-2], self.tile_matrix[c-1], self.tile_matrix[c])
+            m = self.tile_matrix[c-2] * self.tile_matrix[c-1] * self.tile_matrix[c]
             self.meld_matrix[CHOW, c-1] = m
             if m == 0:
                 self.on_chow_elimination(c-1)
 
         if c in INTERNAL_TILES:
-            m = min(self.tile_matrix[c-1], self.tile_matrix[c], self.tile_matrix[c+1])
+            m = self.tile_matrix[c-1] * self.tile_matrix[c] * self.tile_matrix[c+1]
             self.meld_matrix[CHOW, c] = m
             if m == 0:
                 self.on_chow_elimination(c)
 
         if c+1 in INTERNAL_TILES:
-            m = min(self.tile_matrix[c], self.tile_matrix[c+1], self.tile_matrix[c+2])
+            m = self.tile_matrix[c] * self.tile_matrix[c+1] * self.tile_matrix[c+2]
+            self.meld_matrix[CHOW, c+1] = m
+            if m == 0:
+                self.on_chow_elimination(c+1)
+
+    def insert(self, c):
+        n = self.tile_matrix[c]
+        assert n < 4 and n >= 0
+        
+        self.tile_matrix[c] += 1
+        n +=1
+
+        if n == 4:
+            self.pair_matrix[c] = 6
+            self.meld_matrix[PONG, c] = 4
+        elif n == 3:
+            self.pair_matrix[c] = 3
+            self.meld_matrix[PONG, c] = 1
+        elif n == 2:
+            self.pair_matrix[c] = 1
+        elif n == 1:
+            pass
+
+        if c-1 in INTERNAL_TILES:
+            m = self.tile_matrix[c-2] * self.tile_matrix[c-1] * self.tile_matrix[c]
+            self.meld_matrix[CHOW, c-1] = m
+            if m == 0:
+                self.on_chow_elimination(c-1)
+
+        if c in INTERNAL_TILES:
+            m = self.tile_matrix[c-1] * self.tile_matrix[c] * self.tile_matrix[c+1]
+            self.meld_matrix[CHOW, c] = m
+            if m == 0:
+                self.on_chow_elimination(c)
+
+        if c+1 in INTERNAL_TILES:
+            m = self.tile_matrix[c] * self.tile_matrix[c+1] * self.tile_matrix[c+2]
             self.meld_matrix[CHOW, c+1] = m
             if m == 0:
                 self.on_chow_elimination(c+1)
@@ -273,6 +306,27 @@ class Mountain:
 
         return (p, (c-1, c, c+1))
 
+    def __str__(self):
+        s = ''
+        total_pong = np.sum(self.meld_matrix[PONG, :], dtype=np.float)
+        total_chow = np.sum(self.meld_matrix[CHOW, :], dtype=np.float)
+        total_pair = np.sum(self.pair_matrix, dtype=np.float)
+        total = total_pong + total_chow + total_pair
+
+        s += 'PONG p {}\n'.format(self.meld_matrix[PONG, 0:9])
+        s += 'PONG m {}\n'.format(self.meld_matrix[PONG, 9:18])
+        s += 'PONG s {}\n'.format(self.meld_matrix[PONG, 18:27])
+        s += 'PONG z {}\n'.format(self.meld_matrix[PONG, 27:])
+        s += 'CHOW p {}\n'.format(self.meld_matrix[CHOW, 0:9])
+        s += 'CHOW m {}\n'.format(self.meld_matrix[CHOW, 9:18])
+        s += 'CHOW s {}\n'.format(self.meld_matrix[CHOW, 18:27])
+        s += 'PAIR p {}\n'.format(self.pair_matrix[0:9])
+        s += 'PAIR m {}\n'.format(self.pair_matrix[9:18])
+        s += 'PAIR s {}\n'.format(self.pair_matrix[18:27])
+        s += 'PAIR z {}\n'.format(self.pair_matrix[27:])
+
+        return s
+
     def on_pong_elimination(self, c):
         print('PONG {} is eliminated'.format(decode((c, c, c))))
 
@@ -282,10 +336,13 @@ class Mountain:
     def on_pair_elimination(self, c):
         print('PAIR {} is eliminated'.format(decode((c, c))))
 
-
-if __name__ == '__main__':
-    m = Mountain()
-    while True:
-        print(np.sum(m.tile_matrix), decode(m.p3()))
-        input()
-        print(m.tile_matrix)
+def trial(m, lst):
+    for i in range(len(lst)):
+        mc = m.copy()
+        print('deal', lst[i])
+        for j in range(len(lst)):
+            if i == j:
+                continue
+            else:
+                mc.remove(encode(lst[j]))
+        print(mc)

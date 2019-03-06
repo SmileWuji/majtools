@@ -73,3 +73,4 @@ m.remove(maj.encode('7s'))
 # 
 m.remove(maj.encode('4m'))
 # m.remove(maj.encode('6m')) # ron
+maj.trial(m, ['3p','3m','3m','7m','7m','7m','8m','9m','2s','2s','6s','7s','8s'])
