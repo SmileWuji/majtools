@@ -347,14 +347,14 @@ def trial(m, lst):
             else:
                 mc.remove(encode(lst[j]))
         print(mc)
-        a = m.meld_matrix[PONG,encode(lst[i])]
-        b = m.meld_matrix[CHOW,encode(lst[i])]
-        c = m.pair_matrix[encode(lst[i])]
+        a = mc.meld_matrix[PONG,encode(lst[i])]
+        b = mc.meld_matrix[CHOW,encode(lst[i])]
+        c = mc.pair_matrix[encode(lst[i])]
         print(
             'weakness (PONG, CHOW, PAIR, probability)', 
-            m.meld_matrix[PONG,encode(lst[i])], 
-            m.meld_matrix[CHOW,encode(lst[i])], 
-            m.pair_matrix[encode(lst[i])],
-            (a+b+c) / (m.pair_matrix.sum() + m.meld_matrix.sum())
+            a, 
+            b, 
+            c,
+            (a+b+c) / (mc.pair_matrix.sum() + mc.meld_matrix.sum())
         )
         
