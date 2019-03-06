@@ -323,7 +323,7 @@ class Mountain:
         s += 'PAIR p {}\n'.format(self.pair_matrix[0:9])
         s += 'PAIR m {}\n'.format(self.pair_matrix[9:18])
         s += 'PAIR s {}\n'.format(self.pair_matrix[18:27])
-        s += 'PAIR z {}\n'.format(self.pair_matrix[27:])
+        s += 'PAIR z {}'.format(self.pair_matrix[27:])
 
         return s
 
@@ -339,6 +339,7 @@ class Mountain:
 def trial(m, lst):
     for i in range(len(lst)):
         mc = m.copy()
+        print()
         print('deal', lst[i])
         for j in range(len(lst)):
             if i == j:
@@ -346,3 +347,14 @@ def trial(m, lst):
             else:
                 mc.remove(encode(lst[j]))
         print(mc)
+        a = m.meld_matrix[PONG,encode(lst[i])]
+        b = m.meld_matrix[CHOW,encode(lst[i])]
+        c = m.pair_matrix[encode(lst[i])]
+        print(
+            'weakness (PONG, CHOW, PAIR, probability)', 
+            m.meld_matrix[PONG,encode(lst[i])], 
+            m.meld_matrix[CHOW,encode(lst[i])], 
+            m.pair_matrix[encode(lst[i])],
+            (a+b+c) / (m.pair_matrix.sum() + m.meld_matrix.sum())
+        )
+        

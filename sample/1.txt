@@ -108,6 +108,7 @@ CHOW ('7s', '8s', '9s') is eliminated
 PAIR ('4m', '4m') is eliminated
 >>> # m.remove(maj.encode('6m')) # ron
 ... maj.trial(m, ['3p','3m','3m','7m','7m','7m','8m','9m','2s','2s','6s','7s','8s'])
+
 deal 3p
 PONG ('3m', '3m', '3m') is eliminated
 CHOW ('1m', '2m', '3m') is eliminated
@@ -135,6 +136,7 @@ PAIR p [3 3 6 6 6 3 0 3 3]
 PAIR m [0 0 0 0 1 0 0 0 0]
 PAIR s [1 1 1 3 1 3 0 1 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 4 48 6 0.12083333333333333
 
 deal 3m
 PONG ('3m', '3m', '3m') is eliminated
@@ -161,6 +163,7 @@ PAIR p [3 3 3 6 6 3 0 3 3]
 PAIR m [0 0 1 0 1 0 0 0 0]
 PAIR s [1 1 1 3 1 3 0 1 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 1 3 3 0.014583333333333334
 
 deal 3m
 PONG ('3m', '3m', '3m') is eliminated
@@ -187,6 +190,7 @@ PAIR p [3 3 3 6 6 3 0 3 3]
 PAIR m [0 0 1 0 1 0 0 0 0]
 PAIR s [1 1 1 3 1 3 0 1 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 1 3 3 0.014583333333333334
 
 deal 7m
 PONG ('3m', '3m', '3m') is eliminated
@@ -214,6 +218,7 @@ PAIR p [3 3 3 6 6 3 0 3 3]
 PAIR m [0 0 0 0 1 0 1 0 0]
 PAIR s [1 1 1 3 1 3 0 1 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 4 4 6 0.029166666666666667
 
 deal 7m
 PONG ('3m', '3m', '3m') is eliminated
@@ -241,6 +246,7 @@ PAIR p [3 3 3 6 6 3 0 3 3]
 PAIR m [0 0 0 0 1 0 1 0 0]
 PAIR s [1 1 1 3 1 3 0 1 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 4 4 6 0.029166666666666667
 
 deal 7m
 PONG ('3m', '3m', '3m') is eliminated
@@ -268,6 +274,7 @@ PAIR p [3 3 3 6 6 3 0 3 3]
 PAIR m [0 0 0 0 1 0 1 0 0]
 PAIR s [1 1 1 3 1 3 0 1 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 4 4 6 0.029166666666666667
 
 deal 8m
 PONG ('3m', '3m', '3m') is eliminated
@@ -293,6 +300,7 @@ PAIR p [3 3 3 6 6 3 0 3 3]
 PAIR m [0 0 0 0 1 0 0 0 0]
 PAIR s [1 1 1 3 1 3 0 1 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 0 8 0 0.016666666666666666
 
 deal 9m
 PONG ('3m', '3m', '3m') is eliminated
@@ -319,6 +327,7 @@ PAIR p [3 3 3 6 6 3 0 3 3]
 PAIR m [0 0 0 0 1 0 0 0 1]
 PAIR s [1 1 1 3 1 3 0 1 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 0 0 1 0.0020833333333333333
 
 deal 2s
 PONG ('3m', '3m', '3m') is eliminated
@@ -346,6 +355,7 @@ PAIR p [3 3 3 6 6 3 0 3 3]
 PAIR m [0 0 0 0 1 0 0 0 0]
 PAIR s [1 3 1 3 1 3 0 1 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 4 16 6 0.05416666666666667
 
 deal 2s
 PONG ('3m', '3m', '3m') is eliminated
@@ -373,6 +383,7 @@ PAIR p [3 3 3 6 6 3 0 3 3]
 PAIR m [0 0 0 0 1 0 0 0 0]
 PAIR s [1 3 1 3 1 3 0 1 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 4 16 6 0.05416666666666667
 
 deal 6s
 PONG ('3m', '3m', '3m') is eliminated
@@ -401,6 +412,7 @@ PAIR p [3 3 3 6 6 3 0 3 3]
 PAIR m [0 0 0 0 1 0 0 0 0]
 PAIR s [1 1 1 3 1 6 0 1 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 4 16 6 0.05416666666666667
 
 deal 7s
 PONG ('3m', '3m', '3m') is eliminated
@@ -427,6 +439,7 @@ PAIR p [3 3 3 6 6 3 0 3 3]
 PAIR m [0 0 0 0 1 0 0 0 0]
 PAIR s [1 1 1 3 1 3 1 1 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 0 24 1 0.052083333333333336
 
 deal 8s
 PONG ('3m', '3m', '3m') is eliminated
@@ -453,3 +466,5 @@ PAIR p [3 3 3 6 6 3 0 3 3]
 PAIR m [0 0 0 0 1 0 0 0 0]
 PAIR s [1 1 1 3 1 3 0 3 0]
 PAIR z [1 1 3 1 1 0 1]
+weakness (PONG, CHOW, PAIR, probability) 1 0 3 0.008333333333333333
+>>>
