@@ -1,0 +1,455 @@
+Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 14:05:16) [MSC v.1915 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> # http://majsoul.union-game.com/0/?paipu=190306-d89e0d37-0414-4410-8956-386fd710feba_a89575000
+... import maj
+>>> m = maj.Mountain()
+>>> m.remove(maj.encode('na'))
+>>> m.remove(maj.encode('do'))
+>>> m.remove(maj.encode('do'))
+PONG ('do', 'do', 'do') is eliminated
+>>> m.remove(maj.encode('be'))
+>>> #
+... m.remove(maj.encode('1p'))
+>>> m.remove(maj.encode('3m'))
+>>> m.remove(maj.encode('zh'))
+>>> m.remove(maj.encode('7p'))
+>>> #
+... m.remove(maj.encode('ba'))
+>>> m.remove(maj.encode('ba'))
+PONG ('ba', 'ba', 'ba') is eliminated
+>>> m.remove(maj.encode('1m'))
+>>> m.remove(maj.encode('6m'))
+>>> #
+... m.remove(maj.encode('fa'))
+>>> m.remove(maj.encode('be'))
+PONG ('be', 'be', 'be') is eliminated
+>>> m.remove(maj.encode('1m'))
+PONG ('1m', '1m', '1m') is eliminated
+>>> m.remove(maj.encode('7p'))
+PONG ('7p', '7p', '7p') is eliminated
+>>> #
+... m.remove(maj.encode('8m'))
+>>> m.remove(maj.encode('8m'))
+PONG ('8m', '8m', '8m') is eliminated
+>>> m.remove(maj.encode('1s'))
+>>> m.remove(maj.encode('5s'))
+>>> #
+... m.remove(maj.encode('7p'))
+PAIR ('7p', '7p') is eliminated
+>>> m.remove(maj.encode('9s'))
+>>> m.remove(maj.encode('xi'))
+>>> m.remove(maj.encode('6m'))
+PONG ('6m', '6m', '6m') is eliminated
+>>> #
+... m.remove(maj.encode('4m'))
+>>> m.remove(maj.encode('2m'))
+>>> m.remove(maj.encode('zh'))
+PONG ('zh', 'zh', 'zh') is eliminated
+>>> m.remove(maj.encode('3s'))
+>>> #
+... m.remove(maj.encode('na'))
+PONG ('na', 'na', 'na') is eliminated
+>>> m.remove(maj.encode('1m'))
+PAIR ('1m', '1m') is eliminated
+>>> m.remove(maj.encode('6p'))
+>>> m.remove(maj.encode('4m'))
+PONG ('4m', '4m', '4m') is eliminated
+>>> #
+... m.remove(maj.encode('9p'))
+>>> m.remove(maj.encode('8m'))
+PAIR ('8m', '8m') is eliminated
+>>> m.remove(maj.encode('4s'))
+>>> m.remove(maj.encode('3s'))
+PONG ('3s', '3s', '3s') is eliminated
+>>> #
+... m.remove(maj.encode('8s'))
+>>> m.remove(maj.encode('9s'))
+PONG ('9s', '9s', '9s') is eliminated
+>>> m.remove(maj.encode('zh'))
+PAIR ('zh', 'zh') is eliminated
+>>> m.remove(maj.encode('6m'))
+PAIR ('6m', '6m') is eliminated
+>>> #
+... m.remove(maj.encode('7s'))
+>>> m.remove(maj.encode('1m'))
+CHOW ('1m', '2m', '3m') is eliminated
+>>> m.remove(maj.encode('8p'))
+>>> m.remove(maj.encode('2p'))
+>>> #
+... m.remove(maj.encode('5m')) # reach
+>>> m.remove(maj.encode('fa'))
+PONG ('fa', 'fa', 'fa') is eliminated
+>>> m.remove(maj.encode('5m'))
+PONG ('5m', '5m', '5m') is eliminated
+>>> m.remove(maj.encode('9m'))
+>>> #
+... m.remove(maj.encode('9s'))
+PAIR ('9s', '9s') is eliminated
+>>> m.remove(maj.encode('1s'))
+PONG ('1s', '1s', '1s') is eliminated
+>>> m.remove(maj.encode('9m'))
+PONG ('9m', '9m', '9m') is eliminated
+>>> m.remove(maj.encode('5s'))
+PONG ('5s', '5s', '5s') is eliminated
+>>> #
+... m.remove(maj.encode('2m'))
+PONG ('2m', '2m', '2m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+>>> m.remove(maj.encode('2m'))
+PAIR ('2m', '2m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+>>> m.remove(maj.encode('9s'))
+CHOW ('7s', '8s', '9s') is eliminated
+>>> m.remove(maj.encode('7s'))
+PONG ('7s', '7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+>>> #
+... m.remove(maj.encode('4m'))
+PAIR ('4m', '4m') is eliminated
+>>> # m.remove(maj.encode('6m')) # ron
+... maj.trial(m, ['3p','3m','3m','7m','7m','7m','8m','9m','2s','2s','6s','7s','8s'])
+deal 3p
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PAIR ('3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+PAIR ('7m', '7m') is eliminated
+CHOW ('6m', '7m', '8m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('9m', '9m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PONG ('2s', '2s', '2s') is eliminated
+PAIR ('7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG ('8s', '8s', '8s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 4 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 0 0 1 0 1 0 0 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 36 48 64 48 12  9  9  0]
+CHOW m [0 0 1 2 2 2 0 0 0]
+CHOW s [ 0  8 12 12 18  6  6  0  0]
+PAIR p [3 3 6 6 6 3 0 3 3]
+PAIR m [0 0 0 0 1 0 0 0 0]
+PAIR s [1 1 1 3 1 3 0 1 0]
+PAIR z [1 1 3 1 1 0 1]
+
+deal 3m
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+PAIR ('7m', '7m') is eliminated
+CHOW ('6m', '7m', '8m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('9m', '9m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PONG ('2s', '2s', '2s') is eliminated
+PAIR ('7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG ('8s', '8s', '8s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 1 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 0 0 1 0 1 0 0 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 27 36 48 48 12  9  9  0]
+CHOW m [0 0 2 4 2 2 0 0 0]
+CHOW s [ 0  8 12 12 18  6  6  0  0]
+PAIR p [3 3 3 6 6 3 0 3 3]
+PAIR m [0 0 1 0 1 0 0 0 0]
+PAIR s [1 1 1 3 1 3 0 1 0]
+PAIR z [1 1 3 1 1 0 1]
+
+deal 3m
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+PAIR ('7m', '7m') is eliminated
+CHOW ('6m', '7m', '8m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('9m', '9m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PONG ('2s', '2s', '2s') is eliminated
+PAIR ('7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG ('8s', '8s', '8s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 1 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 0 0 1 0 1 0 0 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 27 36 48 48 12  9  9  0]
+CHOW m [0 0 2 4 2 2 0 0 0]
+CHOW s [ 0  8 12 12 18  6  6  0  0]
+PAIR p [3 3 3 6 6 3 0 3 3]
+PAIR m [0 0 1 0 1 0 0 0 0]
+PAIR s [1 1 1 3 1 3 0 1 0]
+PAIR z [1 1 3 1 1 0 1]
+
+deal 7m
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PAIR ('3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+CHOW ('6m', '7m', '8m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('9m', '9m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PONG ('2s', '2s', '2s') is eliminated
+PAIR ('7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG ('8s', '8s', '8s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 1 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 0 0 1 0 1 0 0 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 27 36 48 48 12  9  9  0]
+CHOW m [0 0 1 2 2 4 0 0 0]
+CHOW s [ 0  8 12 12 18  6  6  0  0]
+PAIR p [3 3 3 6 6 3 0 3 3]
+PAIR m [0 0 0 0 1 0 1 0 0]
+PAIR s [1 1 1 3 1 3 0 1 0]
+PAIR z [1 1 3 1 1 0 1]
+
+deal 7m
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PAIR ('3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+CHOW ('6m', '7m', '8m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('9m', '9m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PONG ('2s', '2s', '2s') is eliminated
+PAIR ('7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG ('8s', '8s', '8s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 1 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 0 0 1 0 1 0 0 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 27 36 48 48 12  9  9  0]
+CHOW m [0 0 1 2 2 4 0 0 0]
+CHOW s [ 0  8 12 12 18  6  6  0  0]
+PAIR p [3 3 3 6 6 3 0 3 3]
+PAIR m [0 0 0 0 1 0 1 0 0]
+PAIR s [1 1 1 3 1 3 0 1 0]
+PAIR z [1 1 3 1 1 0 1]
+
+deal 7m
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PAIR ('3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+CHOW ('6m', '7m', '8m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('9m', '9m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PONG ('2s', '2s', '2s') is eliminated
+PAIR ('7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG ('8s', '8s', '8s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 1 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 0 0 1 0 1 0 0 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 27 36 48 48 12  9  9  0]
+CHOW m [0 0 1 2 2 4 0 0 0]
+CHOW s [ 0  8 12 12 18  6  6  0  0]
+PAIR p [3 3 3 6 6 3 0 3 3]
+PAIR m [0 0 0 0 1 0 1 0 0]
+PAIR s [1 1 1 3 1 3 0 1 0]
+PAIR z [1 1 3 1 1 0 1]
+
+deal 8m
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PAIR ('3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+PAIR ('7m', '7m') is eliminated
+PAIR ('9m', '9m') is eliminated
+PONG ('2s', '2s', '2s') is eliminated
+PAIR ('7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG ('8s', '8s', '8s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 1 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 0 0 1 0 1 0 0 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 27 36 48 48 12  9  9  0]
+CHOW m [0 0 1 2 2 2 1 1 0]
+CHOW s [ 0  8 12 12 18  6  6  0  0]
+PAIR p [3 3 3 6 6 3 0 3 3]
+PAIR m [0 0 0 0 1 0 0 0 0]
+PAIR s [1 1 1 3 1 3 0 1 0]
+PAIR z [1 1 3 1 1 0 1]
+
+deal 9m
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PAIR ('3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+PAIR ('7m', '7m') is eliminated
+CHOW ('6m', '7m', '8m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PONG ('2s', '2s', '2s') is eliminated
+PAIR ('7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG ('8s', '8s', '8s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 1 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 0 0 1 0 1 0 0 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 27 36 48 48 12  9  9  0]
+CHOW m [0 0 1 2 2 2 0 0 0]
+CHOW s [ 0  8 12 12 18  6  6  0  0]
+PAIR p [3 3 3 6 6 3 0 3 3]
+PAIR m [0 0 0 0 1 0 0 0 1]
+PAIR s [1 1 1 3 1 3 0 1 0]
+PAIR z [1 1 3 1 1 0 1]
+
+deal 2s
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PAIR ('3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+PAIR ('7m', '7m') is eliminated
+CHOW ('6m', '7m', '8m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('9m', '9m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG ('8s', '8s', '8s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 1 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 1 0 1 0 1 0 0 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 27 36 48 48 12  9  9  0]
+CHOW m [0 0 1 2 2 2 0 0 0]
+CHOW s [ 0 12 18 12 18  6  6  0  0]
+PAIR p [3 3 3 6 6 3 0 3 3]
+PAIR m [0 0 0 0 1 0 0 0 0]
+PAIR s [1 3 1 3 1 3 0 1 0]
+PAIR z [1 1 3 1 1 0 1]
+
+deal 2s
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PAIR ('3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+PAIR ('7m', '7m') is eliminated
+CHOW ('6m', '7m', '8m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('9m', '9m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG ('8s', '8s', '8s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 1 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 1 0 1 0 1 0 0 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 27 36 48 48 12  9  9  0]
+CHOW m [0 0 1 2 2 2 0 0 0]
+CHOW s [ 0 12 18 12 18  6  6  0  0]
+PAIR p [3 3 3 6 6 3 0 3 3]
+PAIR m [0 0 0 0 1 0 0 0 0]
+PAIR s [1 3 1 3 1 3 0 1 0]
+PAIR z [1 1 3 1 1 0 1]
+
+deal 6s
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PAIR ('3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+PAIR ('7m', '7m') is eliminated
+CHOW ('6m', '7m', '8m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('9m', '9m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PONG ('2s', '2s', '2s') is eliminated
+PAIR ('7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG ('8s', '8s', '8s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 1 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 0 0 1 0 4 0 0 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 27 36 48 48 12  9  9  0]
+CHOW m [0 0 1 2 2 2 0 0 0]
+CHOW s [ 0  8 12 12 24  8  8  0  0]
+PAIR p [3 3 3 6 6 3 0 3 3]
+PAIR m [0 0 0 0 1 0 0 0 0]
+PAIR s [1 1 1 3 1 6 0 1 0]
+PAIR z [1 1 3 1 1 0 1]
+
+deal 7s
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PAIR ('3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+PAIR ('7m', '7m') is eliminated
+CHOW ('6m', '7m', '8m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('9m', '9m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PONG ('2s', '2s', '2s') is eliminated
+PONG ('8s', '8s', '8s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 1 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 0 0 1 0 1 0 0 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 27 36 48 48 12  9  9  0]
+CHOW m [0 0 1 2 2 2 0 0 0]
+CHOW s [ 0  8 12 12 18 12 12  0  0]
+PAIR p [3 3 3 6 6 3 0 3 3]
+PAIR m [0 0 0 0 1 0 0 0 0]
+PAIR s [1 1 1 3 1 3 1 1 0]
+PAIR z [1 1 3 1 1 0 1]
+
+deal 8s
+PONG ('3m', '3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PAIR ('3m', '3m') is eliminated
+CHOW ('1m', '2m', '3m') is eliminated
+PONG ('7m', '7m', '7m') is eliminated
+PAIR ('7m', '7m') is eliminated
+CHOW ('6m', '7m', '8m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PAIR ('9m', '9m') is eliminated
+CHOW ('7m', '8m', '9m') is eliminated
+PONG ('2s', '2s', '2s') is eliminated
+PAIR ('7s', '7s') is eliminated
+CHOW ('7s', '8s', '9s') is eliminated
+PONG p [1 1 1 4 4 1 0 1 1]
+PONG m [0 0 0 0 0 0 0 0 0]
+PONG s [0 0 0 1 0 1 0 1 0]
+PONG z [0 0 1 0 0 0 0]
+CHOW p [ 0 27 36 48 48 12  9  9  0]
+CHOW m [0 0 1 2 2 2 0 0 0]
+CHOW s [ 0  8 12 12 18  6  9  0  0]
+PAIR p [3 3 3 6 6 3 0 3 3]
+PAIR m [0 0 0 0 1 0 0 0 0]
+PAIR s [1 1 1 3 1 3 0 3 0]
+PAIR z [1 1 3 1 1 0 1]
